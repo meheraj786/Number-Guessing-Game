@@ -26,11 +26,23 @@ h3{
 }
 input{
   font-size: 24px;
-  padding: 20px 30px;
+  padding: 20px 50px;
   margin: 20px 0;
   border-radius: 10px;
   border: none;
 }
+.range{
+  width: 50%;
+  padding: 5px;
+  background: #4F779D;
+  margin: 0 auto;
+}
+.range .bar{
+  width: 100%;
+  height: 20px;
+  background: #ebe4e4;
+}
+
 button{
   font-size: 24px;
   padding: 15px 25px;

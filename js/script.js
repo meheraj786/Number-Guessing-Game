@@ -13,16 +13,19 @@ const errMsg3 = document.querySelector("#page3 .errMsg")
 const input =document.querySelector(".input")
 const page2Name = document.querySelector("#page2 h2")
 const guessBetween = document.querySelector("#page3 .guessBetween")
+const chances = document.querySelector("#page3 .chances")
 const congrats= document.querySelector("#congrats")
 const winner= document.querySelector(".winner")
 const playAgain= document.querySelector(".playAgain")
+const range= document.querySelector(".range")
+const bar= document.querySelector(".bar")
 
-const chance= 5
+let chance= 5
 
 
 page1Btn.addEventListener("click",()=>{
   if (page1Input.value=="") {
-    errMsg.innerHTML= "Enter Your Name"
+    errMsg.innerHTML= "Enter Player One Name"
     errMsg.style.color= "red"
     errMsg.style.fontSize= "24px"
   }else{
@@ -41,12 +44,14 @@ page2Btn.addEventListener("click", ()=>{
     page2.style.display='none'
     page3.style.display='block'
     guessBetween.innerHTML= `Guess between ${parseInt(page2Input.value)-Math.random()} to ${parseInt(page2Input.value)+Math.floor(Math.random())}`
+    chances.innerHTML= `${chance} chance left`
   }
 })
 
 page3Btn.addEventListener("click", ()=>{
   
   if (page3Input.value=="") {
+    
     errMsg3.innerHTML= "Enter your Guess"
     errMsg3.style.color= "red"
     errMsg3.style.fontSize= "24px"
@@ -55,9 +60,12 @@ page3Btn.addEventListener("click", ()=>{
       congrats.style.display="block"
       winner.innerHTML= "Player two, You Win!!"
     }else{
-      for (let i = 0; i > chance; i++) {
-      errMsg3.innerHTML= `${chance} left`
-        
+      if (chance==1) {
+        congrats.style.display="block"
+      winner.innerHTML= "Player One, You Win!!"
+      }else{
+      chance--
+      chances.innerHTML= `${chance} chance left`
       }
     }
   }
@@ -71,4 +79,5 @@ playAgain.addEventListener("click", ()=>{
   page3.style.display='none'
   page3Input.value= ""
   congrats.style.display="none"
+  chance=5
 })
