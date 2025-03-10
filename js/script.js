@@ -11,7 +11,9 @@ const errMsg = document.querySelector("#page1 .errMsg")
 const errMsg2 = document.querySelector("#page2 .errMsg")
 const errMsg3 = document.querySelector("#page3 .errMsg")
 const input =document.querySelector(".input")
+const playerTwoName =document.querySelector(".playerTwo input")
 const page2Name = document.querySelector("#page2 h2")
+const page3Name = document.querySelector("#page3 h2")
 const guessBetween = document.querySelector("#page3 .guessBetween")
 const chances = document.querySelector("#page3 .chances")
 const congrats= document.querySelector("#congrats")
@@ -24,14 +26,15 @@ let chance= 5
 
 
 page1Btn.addEventListener("click",()=>{
-  if (page1Input.value=="") {
-    errMsg.innerHTML= "Enter Player One Name"
+  if (page1Input.value=="" || playerTwoName.value=="") {
+    errMsg.innerHTML= "Enter Players Name"
     errMsg.style.color= "red"
     errMsg.style.fontSize= "24px"
   }else{
     page1.style.display='none'
     page2.style.display='block'
     page2Name.innerHTML=`Player One (${page1Input.value})`
+    page3Name.innerHTML=`Player Two (${playerTwoName.value})`
   }
 })
 
@@ -66,6 +69,12 @@ page3Btn.addEventListener("click", ()=>{
       }else{
       chance--
       chances.innerHTML= `${chance} chance left`
+      bar.style.width = `${(chance / 5) * 100}%`;
+      if (chance==1) {
+        bar.style.backgroundColor="red"
+      }else if(chance==2){
+bar.style.backgroundColor="orange"
+      }
       }
     }
   }
@@ -74,10 +83,13 @@ page3Btn.addEventListener("click", ()=>{
 playAgain.addEventListener("click", ()=>{
   page1.style.display='block'
   page1Input.value= ""
+  playerTwoName.value=""
   page2.style.display='none'
   page2Input.value= ""
   page3.style.display='none'
   page3Input.value= ""
   congrats.style.display="none"
   chance=5
+  bar.style.width="100%"
+  bar.style.backgroundColor="#ebe4e4"
 })
