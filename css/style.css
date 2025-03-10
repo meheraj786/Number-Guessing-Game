@@ -16,7 +16,7 @@ h1{
   font-size: 64px;
 }
 h2{
-  font-size: 34px;
+  font-size: 44px;
   font-weight: 700;
 }
 input{
@@ -45,3 +45,6 @@ button:hover{
   border: 1px solid #4F779D;
 }
 
+#page2, #page3{
+  display: none;
+}
