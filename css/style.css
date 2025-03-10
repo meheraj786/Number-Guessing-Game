@@ -5,7 +5,9 @@
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
 }
-
+body{
+  background: #D3D3D3;
+}
 
 
 h1{
@@ -13,6 +15,32 @@ h1{
   margin-bottom: 50px;
   font-size: 64px;
 }
-#page1 h2{
-  
+#page1, #page2 h2{
+  font-size: 34px;
 }
+input{
+  font-size: 24px;
+  padding: 20px 30px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: none;
+}
+button{
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #4F779D;
+  color: white;
+  border-radius: 10px;
+  border: none;
+}
+button:hover{
+  font-size: 24px;
+  padding: 15px 25px;
+  cursor: pointer;
+  background: transparent;
+  color: #4F779D;
+  border-radius: 10px;
+  border: 1px solid #4F779D;
+}
+
