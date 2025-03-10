@@ -15,8 +15,9 @@ h1{
   margin-bottom: 50px;
   font-size: 64px;
 }
-#page1, #page2 h2{
+h2{
   font-size: 34px;
+  font-weight: 700;
 }
 input{
   font-size: 24px;
@@ -27,12 +28,12 @@ input{
 }
 button{
   font-size: 24px;
-  padding: 10px 20px;
+  padding: 15px 25px;
   cursor: pointer;
   background: #4F779D;
   color: white;
   border-radius: 10px;
-  border: none;
+  border: 1px solid #4F779D;
 }
 button:hover{
   font-size: 24px;
