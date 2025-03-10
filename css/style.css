@@ -1,0 +1,18 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+}
+
+
+
+h1{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  font-size: 64px;
+}
+#page1 h2{
+  
+}
