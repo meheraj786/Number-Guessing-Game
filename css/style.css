@@ -54,3 +54,15 @@ button:hover{
 #page2, #page3{
   display: none;
 }
+
+#congrats{
+  background: white;
+  max-width: 60%;
+  padding: 100px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}

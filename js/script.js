@@ -9,10 +9,15 @@ const page2Input = document.querySelector("#page2 input")
 const page3Input = document.querySelector("#page3 input")
 const errMsg = document.querySelector("#page1 .errMsg")
 const errMsg2 = document.querySelector("#page2 .errMsg")
+const errMsg3 = document.querySelector("#page3 .errMsg")
 const input =document.querySelector(".input")
 const page2Name = document.querySelector("#page2 h2")
+const guessBetween = document.querySelector("#page3 .guessBetween")
+const congrats= document.querySelector("#congrats")
+const winner= document.querySelector(".winner")
+const playAgain= document.querySelector(".playAgain")
 
-
+const chance= 5
 
 
 page1Btn.addEventListener("click",()=>{
@@ -35,9 +40,35 @@ page2Btn.addEventListener("click", ()=>{
   }else{
     page2.style.display='none'
     page3.style.display='block'
+    guessBetween.innerHTML= `Guess between ${parseInt(page2Input.value)-Math.random()} to ${parseInt(page2Input.value)+Math.floor(Math.random())}`
   }
 })
 
 page3Btn.addEventListener("click", ()=>{
   
+  if (page3Input.value=="") {
+    errMsg3.innerHTML= "Enter your Guess"
+    errMsg3.style.color= "red"
+    errMsg3.style.fontSize= "24px"
+  }else{
+    if (page3Input.value==page2Input.value) {
+      congrats.style.display="block"
+      winner.innerHTML= "Player two, You Win!!"
+    }else{
+      for (let i = 0; i > chance; i++) {
+      errMsg3.innerHTML= `${chance} left`
+        
+      }
+    }
+  }
+})
+
+playAgain.addEventListener("click", ()=>{
+  page1.style.display='block'
+  page1Input.value= ""
+  page2.style.display='none'
+  page2Input.value= ""
+  page3.style.display='none'
+  page3Input.value= ""
+  congrats.style.display="none"
 })
