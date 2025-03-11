@@ -94,10 +94,12 @@ errMsg3.style.fontSize= "24px"
       chance--
       chances.innerHTML= `${chance} chance left`
       bar.style.width = `${(chance / 5) * 100}%`;
+      errMsg3.innerHTML= ""
       if (chance==1) {
         bar.style.backgroundColor="red"
       }else if(chance==2){
 bar.style.backgroundColor="orange"
+
       }
       }
     }
@@ -112,6 +114,9 @@ playAgain.addEventListener("click", ()=>{
   page3Input.value= ""
   congrats.style.display="none"
   chance=5
+  errMsg.innerHTML= ""
+  errMsg2.innerHTML= ""
+  errMsg3.innerHTML= ""
   bar.style.width="100%"
   bar.style.backgroundColor="#ebe4e4"
 })
