@@ -9,14 +9,15 @@ body{
   
   height: 100vh;
   display: flex;
-  animation: effect 10s ease-in-out infinite;
-
 justify-content: center;
 align-items: center;
+animation: colorChange 10s infinite;
+  animation-timing-function: ease-in-out;
 }
 #main{
   background: #D3D3D3;
   padding: 100px;
+  border-radius: 10px;
 }
 
 
@@ -43,7 +44,7 @@ input{
   border: none;
 }
 .range{
-  width: 50%;
+  width: 80%;
   padding: 5px;
   background: #4F779D;
   margin: 0 auto;
@@ -59,6 +60,7 @@ button{
   padding: 15px 25px;
   cursor: pointer;
   background: #4F779D;
+  
   color: white;
   border-radius: 10px;
   border: 1px solid #4F779D;
@@ -77,6 +79,10 @@ button:hover{
 #page2, #page3{
   display: none;
 }
+.guessBetween{
+  margin: 20px;
+  font-size: 20px;
+}
 
 #congrats{
   background: white;
@@ -90,20 +96,21 @@ button:hover{
   display: none;
 }
 
-@keyframes effect{
-  0%{
-    background: linear-gradient(0deg, #4F779D, #A5158C );
+
+@keyframes colorChange {
+  0% {
+    background-color: #4F779D;
   }
-  25%{
-    background: linear-gradient(80deg, #4F779D, #A5158C );
+  25% {
+    background-color: #A5158C;
   }
-  50%{
-    background: linear-gradient(160deg, #4F779D, #A5158C );
+  50% {
+    background-color: #644f9d;
   }
-  75%{
-    background: linear-gradient(240deg, #4F779D, #A5158C );
+  75% {
+    background-color: #A5158C;
   }
-100%{
-  background: linear-gradient(360deg, #4F779D, #A5158C );
-}
+  100% {
+    background-color: #4F779D;
+  }
 }

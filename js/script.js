@@ -33,8 +33,8 @@ page1Btn.addEventListener("click",()=>{
   }else{
     page1.style.display='none'
     page2.style.display='block'
-    page2Name.innerHTML=`Player One (${page1Input.value})`
-    page3Name.innerHTML=`Player Two (${playerTwoName.value})`
+    page2Name.innerHTML=`${page1Input.value}, Enter a number for Guess`
+    page3Name.innerHTML=`${playerTwoName.value}, guess the number`
   }
 })
 
@@ -46,7 +46,7 @@ page2Btn.addEventListener("click", ()=>{
   }else{
     page2.style.display='none'
     page3.style.display='block'
-    guessBetween.innerHTML= `Guess between ${parseInt(page2Input.value)-Math.random()} to ${parseInt(page2Input.value)+Math.floor(Math.random())}`
+    guessBetween.innerHTML= "Guess the number Between 1 to 20"
     chances.innerHTML= `${chance} chance left`
   }
 })
