@@ -21,8 +21,13 @@ const winner= document.querySelector(".winner")
 const playAgain= document.querySelector(".playAgain")
 const range= document.querySelector(".range")
 const bar= document.querySelector(".bar")
+const stats= document.querySelector(".stats")
+const playerOne= document.querySelector(".stats .playerOne")
+const playerTwo= document.querySelector(".stats .playerTwo")
 
 let chance= 5
+let oneWin=0;
+let twoWin=0;
 
 
 page1Btn.addEventListener("click",()=>{
@@ -44,10 +49,16 @@ page2Btn.addEventListener("click", ()=>{
     errMsg2.style.color= "red"
     errMsg2.style.fontSize= "24px"
   }else{
-    page2.style.display='none'
+    if (page2Input.value<0 || page2Input.value>20) {
+      errMsg2.innerHTML= "Enter between 1 to 20"
+      errMsg2.style.color= "red"
+    errMsg2.style.fontSize= "24px"
+    }else{
+      page2.style.display='none'
     page3.style.display='block'
     guessBetween.innerHTML= "Guess the number Between 1 to 20"
     chances.innerHTML= `${chance} chance left`
+    }
   }
 })
 
@@ -58,14 +69,27 @@ page3Btn.addEventListener("click", ()=>{
     errMsg3.innerHTML= "Enter your Guess"
     errMsg3.style.color= "red"
     errMsg3.style.fontSize= "24px"
-  }else{
+  }else if(page3Input.value<0 || page3Input.value>20){
+errMsg3.innerHTML= "Guess between 1 to 20"
+errMsg3.style.color= "red"
+errMsg3.style.fontSize= "24px"
+  }
+  else{
     if (page3Input.value==page2Input.value) {
       congrats.style.display="block"
-      winner.innerHTML= `Player two (${playerTwoName.value}), You Win!!`
+      winner.innerHTML= `${playerTwoName.value}, You Win!!`
+      twoWin++
+      stats.style.display="block"
+      playerOne.innerHTML= `${page1Input.value}: ${oneWin} times win`
+      playerTwo.innerHTML= `${playerTwoName.value}: ${twoWin} times win`
     }else{
       if (chance==1) {
         congrats.style.display="block"
-      winner.innerHTML= "Player One, You Win!!"
+      winner.innerHTML= `${page1Input.value}, You Win!!`
+      oneWin++
+      stats.style.display="block"
+      playerOne.innerHTML= `${page1Input.value}: ${oneWin} times win`
+      playerTwo.innerHTML= `${playerTwoName.value}: ${twoWin} times win`
       }else{
       chance--
       chances.innerHTML= `${chance} chance left`
@@ -82,8 +106,6 @@ bar.style.backgroundColor="orange"
 
 playAgain.addEventListener("click", ()=>{
   page1.style.display='block'
-  page1Input.value= ""
-  playerTwoName.value=""
   page2.style.display='none'
   page2Input.value= ""
   page3.style.display='none'

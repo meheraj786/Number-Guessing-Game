@@ -20,7 +20,9 @@ animation: colorChange 10s infinite;
   border-radius: 10px;
 }
 
-
+img{
+  width: 100%;
+}
 
 h1{
   margin-top: 100px;
@@ -94,6 +96,12 @@ button:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+}
+.stats{
+  display: none;
+}
+.stats h4{
+  font-size: 20px;
 }
 
 
