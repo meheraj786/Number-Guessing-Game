@@ -6,8 +6,19 @@
   text-align: center;
 }
 body{
-  background: #D3D3D3;
+  
+  height: 100vh;
+  display: flex;
+  animation: effect 10s ease-in-out infinite;
+
+justify-content: center;
+align-items: center;
 }
+#main{
+  background: #D3D3D3;
+  padding: 100px;
+}
+
 
 
 h1{
@@ -77,4 +88,22 @@ button:hover{
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
+}
+
+@keyframes effect{
+  0%{
+    background: linear-gradient(0deg, #4F779D, #A5158C );
+  }
+  25%{
+    background: linear-gradient(80deg, #4F779D, #A5158C );
+  }
+  50%{
+    background: linear-gradient(160deg, #4F779D, #A5158C );
+  }
+  75%{
+    background: linear-gradient(240deg, #4F779D, #A5158C );
+  }
+100%{
+  background: linear-gradient(360deg, #4F779D, #A5158C );
+}
 }

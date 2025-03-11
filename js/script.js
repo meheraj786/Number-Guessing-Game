@@ -61,7 +61,7 @@ page3Btn.addEventListener("click", ()=>{
   }else{
     if (page3Input.value==page2Input.value) {
       congrats.style.display="block"
-      winner.innerHTML= "Player two, You Win!!"
+      winner.innerHTML= `Player two (${playerTwoName.value}), You Win!!`
     }else{
       if (chance==1) {
         congrats.style.display="block"
